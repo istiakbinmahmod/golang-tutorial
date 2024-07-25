@@ -13,9 +13,7 @@ This book contains 7 units.
 
 ---
 #### How To run any sample code?
-Run this command `./run.sh <file_path`
-
-(Replace <file_name> by actual file name. I try to remove the binary files since they are bigger in size.)
+Run this command `./run.sh <file_path>`
 
 ---
 I will try to organize the sample codes by each unit. 
