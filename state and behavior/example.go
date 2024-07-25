@@ -32,23 +32,26 @@ func (w World) distance(l1, l2 Location) float64 {
 	s1, c1 := math.Sincos(rad(l1.lat))
 	s2, c2 := math.Sincos(rad(l2.lat))
 	clong := math.Cos(rad(l1.long - l2.long))
-	fmt.Println(s1, c1, s2, c2, clong)
-	distance := w.radius * math.Acos(s1*s2+c1*c2*clong)
-	fmt.Println(distance)
-	return distance
+	return w.radius * math.Acos(s1*s2+c1*c2*clong)
 }
 
 func (l Location) description() string {
 	description := "Location : " +
-		l.name + " \n" +
-		"latitude : " + fmt.Sprintf("%v", l.lat) +
-		" and longitude: " + fmt.Sprintf("%v", l.long) + "\n"
+		l.name +
+		" \n" +
+		"latitude : " +
+		fmt.Sprint(l.lat) +
+		" and longitude: " +
+		fmt.Sprint(l.long) +
+		"\n"
 	return description
 }
 
 func (g GPS) description() string {
-	description := "Current location : \n" + g.current.description() +
-		"Destination location : \n" + g.destination.description()
+	description := "Current location : \n" +
+		g.current.description() +
+		"Destination location : \n" +
+		g.destination.description()
 	return description
 }
 
@@ -57,7 +60,13 @@ func (g GPS) distance() float64 {
 }
 
 func (g GPS) message() string {
-	return "Distance remaining for current and destination location: " + fmt.Sprintf("%v", g.distance()) + "\n"
+	return "Distance between " +
+		g.current.name +
+		" and " +
+		g.destination.name +
+		": " +
+		fmt.Sprint(g.distance()) +
+		"\n"
 }
 
 func main() {
