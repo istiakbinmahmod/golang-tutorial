@@ -1,0 +1,1 @@
+make file="$1" run

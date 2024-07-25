@@ -13,7 +13,7 @@ This book contains 7 units.
 
 ---
 #### How To run any sample code?
-Run this command `go build <file_name>.go; ./<file_name>; rm <file_name>`
+Run this command `./run.sh <file_path`
 
 (Replace <file_name> by actual file name. I try to remove the binary files since they are bigger in size.)
 
