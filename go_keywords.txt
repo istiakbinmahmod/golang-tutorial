@@ -1,0 +1,13 @@
+package
+import
+func
+const
+var
+if
+else
+switch
+case
+default
+fallthrough
+for
+break
